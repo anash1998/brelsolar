@@ -1,0 +1,501 @@
+.solar-product {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 100px;
+    padding-top: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.solar-product {
+    margin-top: -160px;
+}
+
+.solar-product-right p {
+    text-align: justify;
+}
+
+.textchange {
+    text-align: center;
+    color: #29516a;
+}
+
+.solar-product-right h5 {
+    color: #9b9d68;
+}
+
+.solar-product-left img {
+    height: 400px;
+    width: 450px;
+}
+
+.solar-p h2 {
+    text-align: center;
+}
+
+.solar-p h4 {
+    text-align: center;
+    margin-top: 20px;
+    color: #0000FF;
+    margin-bottom: -80px;
+}
+
+
+/* make a type of solar  */
+
+
+.ty {
+    margin-top: -50px;
+    /* background-color: #29516a; */
+
+}
+
+.type-solar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.solar-t {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.solar-t-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.type-one img {
+    height: 450px;
+    width: 450px;
+}
+
+.type-two img {
+    height: 450px;
+    width: 450px;
+}
+
+/* make a key feture  */
+.key {
+    background-color: rgb(223, 236, 247);
+    padding: 20px;
+    margin-bottom: 50px;
+
+}
+
+.list_products {
+    margin: 22px;
+}
+
+.list_products li {
+    margin: 10px;
+    list-style: none;
+}
+
+/* streat solar light section  */
+
+.background-img {
+    background-image: url(../img/bg-images/products-img/jpeg-optimizer_07.webp);
+    height: 80vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.background-content {
+    width: 750px;
+    padding: 30px 30px 50px;
+    border-radius: 6px;
+    text-align: justify;
+    background: rgba(171, 183, 183, .4);
+    position: relative;
+    top: 30%;
+}
+
+/* make a solar pumap section  */
+.background-content {
+    text-align: justify;
+}
+
+.background-content h1 {
+    color: whitesmoke;
+}
+
+.background-content p {
+    color: whitesmoke;
+}
+
+
+/* make a solar pump responsive  */
+.background-img {
+    overflow: hidden;
+}
+
+.solar-pump {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+    gap: 30px;
+}
+
+.solar-pump-right h1 {
+    color: var(--main-color);
+}
+
+
+
+.solar-pump-left img {
+    height: 400px;
+    width: 450px;
+}
+
+/* make a Solar On-Grid sectioin  */
+.Solar-On-Grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 20px;
+    gap: 15px;
+    margin-top: -90px;
+    margin-bottom: -60px;
+
+}
+
+.RIGHT-Solar-On-Grid p {
+    text-align: justify;
+}
+
+.RIGHT-Solar-On-Grid h5 {
+    color: #9b9d68;
+}
+
+.LEFT-Solar-On-Grid img {
+    height: 415px;
+    width: 413px;
+}
+
+.solar-off {
+    margin-top: -123px;
+}
+
+/* make a Solar-Off-Grid-System section  */
+
+.Solar-Off-Grid-System {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 20px;
+    gap: 15px;
+}
+
+.right-Solar-Off-Grid p {
+    text-align: justify;
+}
+
+.right-Solar-Off-Grid h5 {
+    color: #9b9d68;
+}
+
+.solar-off h2 {
+    text-align: center;
+    color: #0000FF;
+}
+
+.left-Solar-Off-Grid img {
+    height: 500px;
+    width: 570px;
+}
+
+.on-grid h2 {
+    text-align: center;
+    color: #0000FF;
+}
+
+@media only screen and (max-width: 430px) {
+
+    /* make solar product responsive  */
+    .solar-product {
+        flex-direction: column;
+        padding-right: 20px;
+    }
+
+    .textchange {
+        padding: 20px 20px;
+        margin-bottom: -40px;
+        text-align: center;
+    }
+
+
+    .solar-product-right p {
+        text-align: justify;
+        margin-top: 60px;
+    }
+
+    .solar-product-left img {
+        padding-right: 20px;
+        padding-left: 20px;
+
+    }
+
+    /* make a type of solar responsive  */
+    .type-solar {
+        flex-direction: column;
+    }
+
+    .type-one p {
+        text-align: center;
+    }
+
+    .type-two p {
+        text-align: center;
+    }
+
+    .solar-t {
+        flex-direction: column;
+    }
+
+    .solar-t-left {
+        flex-direction: column;
+    }
+
+    .overflow {
+        overflow: hidden;
+    }
+
+    .solar-pump {
+        flex-direction: column;
+    }
+
+    .on-grid {
+        flex-direction: column;
+    }
+
+    .Solar-On-Grid {
+        flex-direction: column;
+    }
+
+    .solar-off {
+        flex-direction: column;
+    }
+
+    .Solar-Off-Grid-System {
+        flex-direction: column;
+    }
+
+    .section-text {
+        margin-top: 20px;
+    }
+
+    .LEFT-Solar-On-Grid img {
+        height: 350px;
+        width: 450px;
+        margin-top: 46px;
+    }
+
+    .left-Solar-Off-Grid img {
+        height: 350px;
+        width: 450px;
+
+    }
+
+    .background-content P {
+        padding: 7px 1px !important;
+        width: 46% !important;
+    }
+}
+
+@media only screen and (max-width:576px) {
+    .background-content p {
+        padding: 7px 1px !important;
+        width: 46% !important;
+        padding: 25px 25px;
+    }
+}
+
+/* i make a responsive view in tab -i-paid-mini  */
+
+@media only screen and (max-width: 768px) {
+    .overflow {
+        overflow: hidden;
+    }
+
+    .type-solar {
+        flex-direction: column;
+    }
+
+    .list_products {
+        margin: -18px;
+        padding: 12px;
+    }
+
+    .ty {
+        margin-top: 60px;
+    }
+
+    .solar-product {
+        margin-top: -87px
+    }
+
+    .solar-product-left img {
+        padding-right: 20px;
+        padding-left: 20px;
+        margin-top: -123px;
+
+    }
+
+    .solar-off {
+        margin-top: 100px;
+    }
+
+}
+
+
+
+
+/* i make a responsive view in tab i-paid-air */
+
+@media only screen and (max-width: 820px) {
+    .overflow {
+        overflow: hidden;
+    }
+
+    .type-solar {
+        flex-direction: column;
+    }
+}
+
+/* i make a responsive view in tab i-paid-pro */
+@media only screen and (max-width: 1024px) {
+    .overflow {
+        overflow: hidden;
+    }
+
+    .type-solar {
+        flex-direction: column;
+    }
+
+}
+
+
+.testimonial-slider {
+    background-color: #5072a7;
+    padding: 8rem 2em;
+    height: 700px;
+}
+
+.testimonial-title {
+    color: #fff;
+}
+
+.testimonial-title h2 {
+    padding-left: 0.2em;
+}
+
+.card_container {
+    margin: 0 0.5em;
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+    border: none;
+    height: 100%;
+}
+
+.card-text {
+    text-align: justify;
+}
+
+.card-title {
+    font-size: 22px;
+}
+
+.img-wrapper img {
+    height: 250px;
+    width: 100px;
+}
+
+.card_container {
+    border: 100px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: #fff;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    top: 0%;
+    transform: translateY(-50%);
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+    margin-top: 100px;
+}
+
+@media (min-width: 576px) {
+    .carousel-item {
+        margin-right: 0;
+        flex: 0 0 50%;
+        display: block;
+    }
+
+    .carousel-inner {
+        display: flex;
+    }
+
+}
+
+@media only screen and (max-width:768px) {
+    .carousel-inner {
+        margin-top: 23px;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        margin-top: 123px;
+    }
+    .testimonial-slider{
+        height: 74rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .carousel-card {
+        padding: 1em;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 3em;
+        height: 3em;
+        position: absolute;
+        left: 1em;
+        top: 90%;
+        opacity: 1;
+    }
+
+    .carousel-control-next {
+        left: 4.5em;
+    }
+
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+   .solar-product{
+    flex-direction: column;
+   }
+   .solar-pump{
+    flex-direction: column;
+   }
+   .Solar-On-Grid{
+    flex-direction: column;
+   }
+   .Solar-Off-Grid-System{
+    flex-direction: column;
+   }
+   .testimonial-slider{
+    height: 53rem;
+   }
+}
