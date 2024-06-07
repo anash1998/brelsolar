@@ -44,7 +44,7 @@
               <li><i class="bx bx-chevron-right"></i> <a href="OurProducts.php">Our products</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="Contactus.php">Contact us</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="SolarCalculater.php">Solar Calculater</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="RenawableEnergyServiceCompany.php">RESC</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="RenawableEnergyServiceCompany.php">Renawable Energy Service Company</a></li>
 
             </ul>
           </div>

@@ -4416,3 +4416,76 @@ background-color: #FFC87657;
     margin-top: -153px ;
   }
 }
+
+/* Custom styling for the modal */
+.modal-content {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  border: none;
+}
+
+/* Styling for the modal header */
+.modal-header {
+  background-color: #343a40;
+  color: #fff;
+  border-bottom: none;
+}
+
+/* Styling for the modal title */
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Styling for the modal body container */
+.modal-body {
+  padding: 1rem;
+}
+
+/* Styling for the form labels */
+label {
+  font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #343a40;
+    transition: all 0.3s ease;
+}
+
+/* Styling for the form inputs */
+.form-control {
+  border-radius: 5px;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+  border: 1px solid #ced4da;
+}
+
+.form-control:focus + label,
+  .form-control:not(:placeholder-shown) + label {
+    font-size: 0.75rem;
+    transform: translateY(-1.5rem);
+  }
+
+/* Styling for the form submit button */
+#sendMessageBtn {
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  border: none;
+}
+
+/* Styling for the form submit button on hover */
+#sendMessageBtn:hover {
+  background-color: #0069d9;
+  cursor: pointer;
+}
+.image-container img{
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+}
+
+
+.icon-color{
+  color: #fff;
+}

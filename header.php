@@ -25,7 +25,7 @@
         <a href="index.php"><img src="./assets/img/icons/Catalog BREL LOGO.webp" alt="" width="172px"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2"
           aria-controls="offcanvasNavbar2">
-          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon icon-color"></span>
         </button>
         <div class="offcanvas offcanvas-end text-bg-light" tabindex="-1" id="offcanvasNavbar2"
           aria-labelledby="offcanvasNavbar2Label">
@@ -76,12 +76,17 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Ready to Switch to Solar? Calculate your requirement</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <form class="p-4">
-          <div class="mb-3">
+      <div class="image-container">
+        <img src="./assets/img/bg-images/SolarCalculator/solar_calulater.webp" alt="" srcset="">
+      </div>
+      <div class="container modal-body">
+        <div class="row">
+
+          <form class="p-4">
+            <div class=" mb-3">
           <label for="userName">Name</label>
           <input type="text" class="form-control" id="userName" placeholder="Enter your name" required>
           </div>
@@ -108,36 +113,22 @@
           <div class="mb-3">
            <label for="rate">Rate (per kWh in $):</label>
           <input type="number" class="form-control" id="rate" placeholder="Enter the rate" required>
-          </div>
-        </form>
+        </div>
+      </form>
+    </div> 
       </div>
       <div class="modal-footer">
+      <button id="goBackFormBtn" class="btn btn-secondary">Go Back to Form</button>
       <button type="button" class="btn btn-primary" id="sendMessageBtn">Send message</button>
       </div>
     </div>
   </div>
 </div>
 
-
-
-<div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="resultModalLabel">Form Submission Result</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" id="resultContent">
-                <!-- Form submission result will be displayed here -->
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
 <script>
-document.getElementById('sendMessageBtn').addEventListener('click', function() {
+
+
+document.getElementById('sendMessageBtn').addEventListener('click', function () {
     // Get form data
     var userName = document.getElementById('userName').value;
     var userEmail = document.getElementById('userEmail').value;
@@ -147,58 +138,118 @@ document.getElementById('sendMessageBtn').addEventListener('click', function() {
     var consumption = parseFloat(document.getElementById('consumption').value);
     var rate = parseFloat(document.getElementById('rate').value);
 
+    // Perform validation checks
+    if (userName.trim() === "") {
+        alert("Please enter your name.");
+        return;
+    }
+    if (userEmail.trim() === "") {
+        alert("Please enter your email.");
+        return;
+    }
+    if (userPhone.trim() === "") {
+        alert("Please enter your phone number.");
+        return;
+    }
+    if (userAddress.trim() === "") {
+        alert("Please enter your address.");
+        return;
+    }
+    if (userCity.trim() === "") {
+        alert("Please enter your city.");
+        return;
+    }
+    if (isNaN(consumption) || consumption <= 0) {
+        alert("Please enter a valid electricity consumption.");
+        return;
+    }
+    if (isNaN(rate) || rate <= 0) {
+        alert("Please enter a valid rate.");
+        return;
+    }
+
     // Calculate yearly cost
     var yearlyCost = consumption * rate * 365; // Assuming 365 days in a year
 
     // Prepare result message
-    var resultMessage = '<strong style="padding: 15px;">Name: </strong>' + userName + '<br>' +
-                        '<strong style="padding: 15px;">Email: </strong>' + userEmail + '<br>' +
-                        '<strong style="padding: 15px;">Phone: </strong>' + userPhone + '<br>' +
-                        '<strong style="padding: 15px;">Address: </strong>' + userAddress + '<br>' +
-                        '<strong style="padding: 15px;">City: </strong>' + userCity + '<br>' +
-                        '<strong style="padding: 15px;">Electricity Consumption (kWh): </strong>' + consumption + '<br>' +
-                        '<strong style="padding: 15px;">Rate (per kWh in $): </strong>' + rate + '<br>' +
-                        '<strong style="padding: 15px;">Yearly Cost: </strong>$' + yearlyCost.toFixed(2);
+    var resultMessage = '<strong>Name: </strong>' + userName + '<br>' +
+                        '<strong>Email: </strong>' + userEmail + '<br>' +
+                        '<strong>Phone: </strong>' + userPhone + '<br>' +
+                        '<strong>Address: </strong>' + userAddress + '<br>' +
+                        '<strong>City: </strong>' + userCity + '<br>' +
+                        '<strong>Electricity Consumption (kWh): </strong>' + consumption + '<br>' +
+                        '<strong>Rate (per kWh in $): </strong>' + rate + '<br>' +
+                        '<strong>Yearly Cost: </strong>$' + yearlyCost.toFixed(2);
 
-    // Display result in result modal
-    document.getElementById('resultContent').innerHTML = resultMessage;
-    var resultModal = new bootstrap.Modal(document.getElementById('resultModal'));
-    resultModal.show();
-});
+    // Update modal content with result message
+    var modalContent = document.querySelector('.modal-body');
+    modalContent.innerHTML = resultMessage;
 
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('sendMessageBtn').addEventListener('click', function () {
-        // Get form inputs
-        var userName = document.getElementById('userName').value.trim();
-        var userEmail = document.getElementById('userEmail').value.trim();
-        var userPhone = document.getElementById('userPhone').value.trim();
-        var userAddress = document.getElementById('userAddress').value.trim();
-        var userCity = document.getElementById('userCity').value.trim();
-        var consumption = document.getElementById('consumption').value.trim();
-        var rate = document.getElementById('rate').value.trim();
-        
-
-        // Validation checks
-        if (userName === '' || userEmail === '' || userPhone === '' || userAddress === '' || userCity === '' || consumption === '' || rate === '') {
-    var alertDiv = document.createElement('div');
-    alertDiv.classList.add('alert', 'alert-danger');
-    alertDiv.textContent = 'Please fill out all fields.';
-
-    // Append the alert to a container div with id "alertContainer" if you have one
-    var alertContainer = document.getElementById('alertContainer');
-    if (alertContainer) {
-        alertContainer.appendChild(alertDiv);
-    } else {
-        // If you don't have a container div, append the alert to the body
-        document.body.appendChild(alertDiv);
-    }
-    
-    return false; // Prevent form submission
-}
-        // Additional validation checks (e.g., email format, phone number format)
-
-        // If all checks pass, submit the form
-        document.getElementById('exampleModal').submit();
+    // Hide form elements
+    var formElements = document.querySelectorAll('.modal-body form input');
+    formElements.forEach(function(element) {
+        element.style.display = 'none';
     });
+
+    // Change modal title
+    var modalTitle = document.querySelector('.modal-title');
+    modalTitle.textContent = 'Calculation Result';
+
+    // Disable submit button
+    document.getElementById('sendMessageBtn').disabled = true;
 });
-</script>
+
+
+document.getElementById('goBackFormBtn').addEventListener('click', function () {
+    // Update modal content with the original form
+    var modalContent = document.querySelector('.modal-body');
+    modalContent.innerHTML = `
+        <div class="row">
+            <form class="p-4">
+                <div class="mb-3">
+                    <label for="userName">Name</label>
+                    <input type="text" class="form-control" id="userName" placeholder="Enter your name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="userEmail">Email</label>
+                    <input type="email" class="form-control" id="userEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="userPhone">Phone</label>
+                    <input type="tel" class="form-control" id="userPhone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="mb-3">
+                    <label for="userAddress">Address</label>
+                    <input type="text" class="form-control" id="userAddress" placeholder="Enter your address" required>
+                </div>
+                <div class="mb-3">
+                    <label for="userCity">City</label>
+                    <input type="text" class="form-control" id="userCity" placeholder="Enter your city" required>
+                </div>
+                <div class="mb-3">
+                    <label for="consumption">Electricity Consumption (kWh):</label>
+                    <input type="number" class="form-control" id="consumption" placeholder="Enter your consumption" required>
+                </div>
+                <div class="mb-3">
+                    <label for="rate">Rate (per kWh in $):</label>
+                    <input type="number" class="form-control" id="rate" placeholder="Enter the rate" required>
+                </div>
+            </form>
+        </div>
+    `;
+
+    // Show form elements
+    var formElements = document.querySelectorAll('.modal-body form input');
+    formElements.forEach(function(element) {
+        element.style.display = '';
+    });
+
+    // Change modal title back to the original title
+    var modalTitle = document.querySelector('.modal-title');
+    modalTitle.textContent = 'Ready to Switch to Solar? Calculate your requirement';
+
+    // Enable submit button
+    document.getElementById('sendMessageBtn').disabled = false;
+});
+
+ </script>
